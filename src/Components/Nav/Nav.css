@@ -1,8 +1,11 @@
 .page-nav {
   display: flex;
+  justify-content: center;
   gap: 2em;
   position: sticky;
   top: 0;
+
+  background-color: #fff;
 }
 
 .nav-link {

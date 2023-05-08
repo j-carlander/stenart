@@ -1,0 +1,17 @@
+header {
+  text-align: center;
+}
+
+.pre-title,
+.hero-title {
+  margin: 0;
+}
+.hero-title {
+  font-family: "Italianno", cursive;
+  font-size: 6rem;
+}
+
+.pre-title {
+  font-family: "Imbue", serif;
+  font-size: 2rem;
+}

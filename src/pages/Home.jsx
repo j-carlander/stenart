@@ -7,16 +7,15 @@ export function Home() {
 
   useEffect(() => {
     fetchFromRoute("home").then((data) => {
-      console.log("img: ", data.hero.image.value);
       setImageSrc(data.hero.image.value);
       setPresentation(data.hero.presentation.value);
     });
   }, []);
 
   return (
-    <article>
+    <main>
       <img src={imageSrc} alt="" />
       <p>{presentation}</p>
-    </article>
+    </main>
   );
 }
