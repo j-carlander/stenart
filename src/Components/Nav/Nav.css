@@ -1,0 +1,14 @@
+.page-nav {
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.active-link {
+  border-bottom: 3px solid black;
+}
