@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { fetchFromRoute } from "./fetchData/fetchData";
+import { Home } from "./pages/Home";
 
 function App() {
-  useEffect(() => {
-    fetchFromRoute("home").then((result) => console.log(result));
-  }, []);
-  return <></>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
 
 export default App;

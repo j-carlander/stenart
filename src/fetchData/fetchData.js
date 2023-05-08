@@ -32,6 +32,5 @@ export async function fetchFromRoute(route) {
     headers: { Authorization: "Bearer " + token },
   });
   const data = await response.json();
-  console.log(data);
-  return "hej";
+  return data;
 }
