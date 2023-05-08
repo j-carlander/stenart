@@ -1,16 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Nav.css";
 
-function Nav() {
+export function Nav() {
   return (
     <nav className="page-nav">
-      <NavLink
-        to="/"
-        className={({ isActive }) =>
-          isActive ? "nav-link active-link" : "nav-link"
-        }>
-        Start
-      </NavLink>
+      <Link to="/">Start</Link>
       <NavLink
         to="/gallery"
         className={({ isActive }) =>

@@ -20,13 +20,11 @@ async function fetchToken() {
       "&grant_type=client_credentials&scope=Easyweb.ExternalApi",
   });
   const tokenObject = await response.json();
-  console.log("tokenObject: ", tokenObject);
   return tokenObject.access_token;
 }
 
 export async function fetchFromRoute(route) {
   const token = await fetchToken();
-  console.log("token: ", token);
   const url = apiUrl + "routes/" + route;
   const response = await fetch(url, {
     headers: { Authorization: "Bearer " + token },
