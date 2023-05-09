@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchFromRoute } from "../fetchData/fetchData";
-import "./stylesheets/Home.css";
+import "./stylesheets/Pages.css";
 
 export function Home() {
   const [presentation, setPresentation] = useState("");
@@ -14,9 +14,9 @@ export function Home() {
   }, []);
 
   return (
-    <main className="home-main">
-      <img src={imageSrc} alt="" />
-      <p>{presentation}</p>
+    <main className="page-main">
+      <img className="hero-img" src={imageSrc} alt="" />
+      <p className="hero-pres">{presentation}</p>
     </main>
   );
 }

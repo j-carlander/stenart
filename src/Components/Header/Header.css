@@ -2,7 +2,7 @@ header {
   text-align: center;
 }
 
-.pre-title,
+.pre-hero-title,
 .hero-title {
   margin: 0;
 }
@@ -11,7 +11,7 @@ header {
   font-size: 6rem;
 }
 
-.pre-title {
+.pre-hero-title {
   font-family: "Imbue", serif;
   font-size: 2rem;
 }

@@ -1,0 +1,24 @@
+/* page generic */
+
+.page-main {
+  max-width: 80%;
+  margin: 1em auto;
+}
+
+.page-title {
+  font-family: "Imbue", serif;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+/* Home page */
+.hero-img {
+  width: 100%;
+}

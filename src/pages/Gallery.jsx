@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchFromRoute } from "../fetchData/fetchData";
 import { GalleryCard } from "../Components/GalleryCard/GalleryCard";
+import "./stylesheets/Pages.css";
 
 export function Gallery() {
   const [gallery, setGallery] = useState([]);
@@ -9,9 +10,9 @@ export function Gallery() {
     fetchFromRoute("gallery").then((result) => setGallery(result.gallery));
   }, []);
   return (
-    <main>
-      <h2>Galleri</h2>
-      <div className="grid-container">
+    <main className="page-main">
+      <h2 className="page-title">Galleri</h2>
+      <div className="flex-container">
         {gallery.length > 0
           ? gallery.map((item, index) => {
               return (

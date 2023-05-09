@@ -4,7 +4,13 @@ import "./Nav.css";
 export function Nav() {
   return (
     <nav className="page-nav">
-      <Link to="/">Start</Link>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          isActive ? "nav-link active-link" : "nav-link"
+        }>
+        Start
+      </NavLink>
       <NavLink
         to="/gallery"
         className={({ isActive }) =>
