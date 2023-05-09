@@ -7,7 +7,13 @@ export function Gallery() {
   const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
-    fetchFromRoute("gallery").then((result) => setGallery(result.gallery));
+    let componentIsLoaded = true;
+
+    fetchFromRoute("gallery").then((result) => {
+      if (componentIsLoaded) setGallery(result.gallery);
+    });
+
+    return () => (componentIsLoaded = false);
   }, []);
   return (
     <main className="page-main">

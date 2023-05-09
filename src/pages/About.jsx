@@ -8,10 +8,15 @@ export function About() {
   const [profilePic, setProfilePic] = useState("");
 
   useEffect(() => {
+    let componentIsLoaded = true;
+
     fetchFromRoute("about").then((result) => {
-      setAbout(result.mainContent);
-      setProfilePic(result.relatedImage.value);
+      if (componentIsLoaded) {
+        setAbout(result.mainContent);
+        setProfilePic(result.relatedImage.value);
+      }
     });
+    return () => (componentIsLoaded = false);
   }, []);
   return (
     <main className="page-main">

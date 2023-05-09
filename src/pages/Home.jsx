@@ -7,10 +7,16 @@ export function Home() {
   const [imageSrc, setImageSrc] = useState("");
 
   useEffect(() => {
+    let componentIsLoaded = true;
+
     fetchFromRoute("home").then((data) => {
-      setImageSrc(data.hero.image.value);
-      setPresentation(data.hero.presentation.value);
+      if (componentIsLoaded) {
+        setImageSrc(data.hero.image.value);
+        setPresentation(data.hero.presentation.value);
+      }
     });
+
+    return () => (componentIsLoaded = false);
   }, []);
 
   return (
