@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { fetchFromRoute } from "../fetchData/fetchData";
 import { GalleryCard } from "../Components/GalleryCard/GalleryCard";
 import "./stylesheets/Pages.css";
 
 export function Gallery() {
   const [gallery, setGallery] = useState([]);
+  const [currentlyOnDisplay, setCurrentlyOnDisplay] = useState([]);
+
+  const modalRef = useRef();
 
   useEffect(() => {
     let componentIsLoaded = true;
@@ -29,7 +32,7 @@ export function Gallery() {
                 />
               );
             })
-          : ""}
+          : "Laddar..."}
       </div>
     </main>
   );

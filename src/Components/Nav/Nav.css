@@ -4,15 +4,16 @@
   gap: 2em;
   position: sticky;
   top: 0;
-
-  background-color: #fff;
+  padding: 1em;
+  background-color: #e09145;
 }
 
 .nav-link {
   text-decoration: none;
-  color: inherit;
+  color: #292c35;
+  font-weight: 700;
 }
 
 .active-link {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #292c35;
 }

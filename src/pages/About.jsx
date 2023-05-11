@@ -24,8 +24,8 @@ export function About() {
       <div className="flex-container">
         <img src={profilePic} alt="" />
         <p>{about?.introduction?.value}</p>
+        <p className="about-body">{about?.body?.value}</p>
       </div>
-      <p>{about?.body?.value}</p>
     </main>
   );
 }
