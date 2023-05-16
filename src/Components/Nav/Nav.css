@@ -12,8 +12,28 @@
   text-decoration: none;
   color: #292c35;
   font-weight: 700;
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition: all 200ms ease-in;
 }
 
+.nav-link:hover {
+  text-decoration: none;
+  background-color: #292c35;
+  color: #e09145;
+  font-weight: 700;
+}
 .active-link {
-  border-bottom: 3px solid #292c35;
+  position: relative;
+}
+
+.active-link::before {
+  content: "";
+  width: calc(100% - 2em);
+  height: 0.2em;
+  background-color: #292c35;
+  position: absolute;
+  bottom: 0.1em;
+  border-radius: 1000px;
 }

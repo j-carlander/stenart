@@ -1,10 +1,5 @@
 /* page generic */
 
-/* .page-main {
-  max-width: 80%;
-  margin: 1em auto;
-} */
-
 .page-title {
   font-family: "Imbue", serif;
   font-size: 2.5rem;
@@ -14,27 +9,19 @@
 .flex-container {
   margin: 0 auto;
   display: flex;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   gap: 2em;
   justify-content: center;
+  align-items: center;
 }
 
 /* Home page */
 .hero-img {
-  width: 100%;
+  max-width: 500px;
 }
-
-@media screen and (min-width: 1000px) {
-  .flex-container {
-    margin-top: 2em;
-  }
-  .hero-img {
-    order: 1;
-    max-width: 50%;
-  }
-  .hero-press {
-    order: 0;
-  }
+.hero-pres {
+  max-width: 450px;
 }
 
 /* About page */

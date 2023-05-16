@@ -20,11 +20,6 @@ export function DisplayCase({ onDisplay, modalRef }) {
       if (nextIndex < 0) nextIndex = onDisplay.length - 1;
       figRef.current.style.cssText = "animation: slideOutRight 500ms";
     }
-    if (value >= 0 && value < onDisplay.length) {
-      nextIndex = value;
-    }
-
-    // update state to reflect the new category
 
     setTimeout(() => {
       setCurrentIndex(nextIndex);
@@ -35,22 +30,31 @@ export function DisplayCase({ onDisplay, modalRef }) {
     <dialog ref={modalRef} className="display-dialog">
       <div className="carousel">
         <button
-          onClick={() => modalRef.current.close()}
-          className="carousel-btn close">
-          X
+          className="carousel-btn close"
+          onClick={() => {
+            setCurrentIndex(0);
+            modalRef.current.close();
+          }}>
+          &#10005;
         </button>
-        <button
-          onClick={onSlideChange}
-          className="carousel-btn prev"
-          data-value="prev">
-          &#8656;
-        </button>
-        <button
-          onClick={onSlideChange}
-          className="carousel-btn next"
-          data-value="next">
-          &#8658;
-        </button>
+        {onDisplay.length > 1 ? (
+          <>
+            <button
+              onClick={onSlideChange}
+              className="carousel-btn prev"
+              data-value="prev">
+              &#8656;
+            </button>
+            <button
+              onClick={onSlideChange}
+              className="carousel-btn next"
+              data-value="next">
+              &#8658;
+            </button>
+          </>
+        ) : (
+          <></>
+        )}
         {onDisplay.length > 0 ? (
           <figure className="carousel-slide" ref={figRef}>
             <img
@@ -60,19 +64,12 @@ export function DisplayCase({ onDisplay, modalRef }) {
             />
           </figure>
         ) : (
-          ""
+          <></>
         )}
+        <p className="carousel-img-count">
+          {currentIndex + 1}/{onDisplay.length}
+        </p>
       </div>
     </dialog>
   );
 }
-
-/**
- *         {onDisplay.map((image, index) => {
-          return (
-            <figure key={index} className="carousel-slide">
-              <img src={image.value} alt="" className="slide-img " />
-            </figure>
-          );
-        })}
- */
