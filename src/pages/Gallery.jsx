@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { fetchFromRoute } from "../fetchData/fetchData";
+import { fetchFromRoute } from "../services/fetchData";
 import { GalleryCard } from "../Components/GalleryCard/GalleryCard";
 import "./stylesheets/Pages.css";
 import { DisplayCase } from "../Components/DisplayCase/DisplayCase";

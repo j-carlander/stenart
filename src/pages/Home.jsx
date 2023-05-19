@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchFromRoute } from "../fetchData/fetchData";
+import { fetchFromRoute } from "../services/fetchData";
 import "./stylesheets/Pages.css";
 
 export function Home() {
