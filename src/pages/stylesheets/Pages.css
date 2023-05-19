@@ -1,9 +1,15 @@
 /* page generic */
-
+.page-main {
+  text-align: center;
+}
 .page-title {
   font-family: "Imbue", serif;
   font-size: 2.5rem;
-  text-align: center;
+}
+
+.page-subtitle {
+  font-family: "Imbue", serif;
+  font-size: 1.5rem;
 }
 
 .flex-container {
@@ -18,6 +24,7 @@
 
 /* Home page */
 .hero-img {
+  width: 100%;
   max-width: 500px;
 }
 .hero-pres {
@@ -27,10 +34,14 @@
 /* Gallery page*/
 .gallery-container {
   max-width: 50em;
+  padding: 2em;
 }
 
 /* About page */
+.about-profile-img {
+  border-radius: 50%;
+}
 .about-body {
-  flex-basis: 50%;
+  flex-basis: 100%;
   width: max-content;
 }

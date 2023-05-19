@@ -11,6 +11,7 @@ export function About() {
     let componentIsLoaded = true;
 
     fetchFromRoute("about").then((result) => {
+      console.log(result);
       if (componentIsLoaded) {
         setAbout(result.mainContent);
         setProfilePic(result.relatedImage.value);
@@ -22,9 +23,9 @@ export function About() {
     <main className="page-main">
       <h2 className="page-title">Om mig</h2>
       <div className="flex-container">
-        <img src={profilePic} alt="" />
         <p>{about?.introduction?.value}</p>
-        <p className="about-body">{about?.body?.value}</p>
+        <img src={profilePic} alt="" className="about-profile-img" />
+        <p className="about-body">{about?.short?.value}</p>
       </div>
     </main>
   );

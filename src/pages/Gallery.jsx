@@ -14,9 +14,16 @@ export function Gallery() {
     let componentIsLoaded = true;
 
     fetchFromRoute("gallery").then((result) => {
-      console.log([...result.skulpturer, ...result.akvareller]);
-      if (componentIsLoaded)
-        setGallery([...result.skulpturer, ...result.akvareller]);
+      const skulpturer = {
+        title: "Skulpturer",
+        images: result.skulpturer,
+      };
+      const akvareller = {
+        title: "Akvareller",
+        images: result.akvareller,
+      };
+      console.log(result);
+      if (componentIsLoaded) setGallery([skulpturer, akvareller]);
     });
 
     return () => (componentIsLoaded = false);
@@ -29,21 +36,30 @@ export function Gallery() {
   return (
     <main className="page-main">
       <h2 className="page-title">Galleri</h2>
-      <div className="flex-container gallery-container">
-        {gallery.length > 0
-          ? gallery.map((item, index) => {
-              return (
-                <GalleryCard
-                  key={index}
-                  preview={item.gallery_item.image[0].value}
-                  altText={item.gallery_item.alt}
-                  images={item.gallery_item.image}
-                  handleImgClick={handleImgClick}
-                />
-              );
-            })
-          : "Laddar..."}
-      </div>
+
+      {gallery.length > 0
+        ? gallery.map((category, index) => {
+            return (
+              <section>
+                <h3 className="page-subtitle">{category.title}</h3>
+                <div className="flex-container gallery-container">
+                  {category.images.map((item, imgIndex) => {
+                    return (
+                      <GalleryCard
+                        key={index + "_" + imgIndex}
+                        preview={item.gallery_item.images[0].value}
+                        altText={item.gallery_item.alt}
+                        images={item.gallery_item.images}
+                        handleImgClick={handleImgClick}
+                      />
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })
+        : "Laddar..."}
+
       <DisplayCase onDisplay={onDisplay} modalRef={modalRef} />
     </main>
   );
