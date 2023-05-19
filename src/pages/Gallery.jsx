@@ -22,7 +22,6 @@ export function Gallery() {
         title: "Akvareller",
         images: result.akvareller,
       };
-      console.log(result);
       if (componentIsLoaded) setGallery([skulpturer, akvareller]);
     });
 
@@ -40,7 +39,7 @@ export function Gallery() {
       {gallery.length > 0
         ? gallery.map((category, index) => {
             return (
-              <section>
+              <section key={index}>
                 <h3 className="page-subtitle">{category.title}</h3>
                 <div className="flex-container gallery-container">
                   {category.images.map((item, imgIndex) => {

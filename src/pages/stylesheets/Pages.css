@@ -1,15 +1,20 @@
 /* page generic */
 .page-main {
   text-align: center;
+  margin-bottom: 4em;
 }
-.page-title {
+.page-title,
+.page-subtitle {
   font-family: "Imbue", serif;
-  font-size: 2.5rem;
+  letter-spacing: 3px;
+}
+
+.page-title {
+  font-size: 3rem;
 }
 
 .page-subtitle {
-  font-family: "Imbue", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .flex-container {

@@ -6,6 +6,7 @@ import { NoPage } from "./pages/NoPage";
 import { Route, Routes } from "react-router-dom";
 import { Gallery } from "./pages/Gallery";
 import { About } from "./pages/About";
+import { Footer } from "./Footer/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NoPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

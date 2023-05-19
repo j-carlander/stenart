@@ -11,7 +11,6 @@ export function About() {
     let componentIsLoaded = true;
 
     fetchFromRoute("about").then((result) => {
-      console.log(result);
       if (componentIsLoaded) {
         setAbout(result.mainContent);
         setProfilePic(result.relatedImage.value);
