@@ -21,11 +21,15 @@ export function About() {
   return (
     <main className="page-main">
       <h2 className="page-title">Om mig</h2>
-      <div className="flex-container">
-        <p>{about?.introduction?.value}</p>
-        <img src={profilePic} alt="" className="about-profile-img" />
-        <p className="about-body">{about?.short?.value}</p>
-      </div>
+      {Object.keys(about).length > 0 ? (
+        <div className="flex-container">
+          <p>{about?.introduction?.value}</p>
+          <img src={profilePic} alt="" className="about-profile-img" />
+          <p className="about-body">{about?.short?.value}</p>
+        </div>
+      ) : (
+        "Laddar..."
+      )}
     </main>
   );
 }

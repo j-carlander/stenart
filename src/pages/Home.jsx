@@ -21,10 +21,14 @@ export function Home() {
 
   return (
     <main className="page-main">
-      <div className="flex-container">
-        <img className="hero-img" src={imageSrc} alt="" />
-        <p className="hero-pres">{presentation}</p>
-      </div>
+      {presentation ? (
+        <div className="flex-container">
+          <img className="hero-img" src={imageSrc} alt="" />
+          <p className="hero-pres">{presentation}</p>
+        </div>
+      ) : (
+        "Laddar..."
+      )}
     </main>
   );
 }
