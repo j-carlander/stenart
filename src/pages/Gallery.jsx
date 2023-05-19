@@ -14,7 +14,9 @@ export function Gallery() {
     let componentIsLoaded = true;
 
     fetchFromRoute("gallery").then((result) => {
-      if (componentIsLoaded) setGallery(result.gallery);
+      console.log([...result.skulpturer, ...result.akvareller]);
+      if (componentIsLoaded)
+        setGallery([...result.skulpturer, ...result.akvareller]);
     });
 
     return () => (componentIsLoaded = false);
@@ -27,7 +29,7 @@ export function Gallery() {
   return (
     <main className="page-main">
       <h2 className="page-title">Galleri</h2>
-      <div className="flex-container">
+      <div className="flex-container gallery-container">
         {gallery.length > 0
           ? gallery.map((item, index) => {
               return (

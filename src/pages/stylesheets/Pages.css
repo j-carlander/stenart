@@ -24,8 +24,13 @@
   max-width: 450px;
 }
 
+/* Gallery page*/
+.gallery-container {
+  max-width: 50em;
+}
+
 /* About page */
 .about-body {
-  flex-basis: 100%;
+  flex-basis: 50%;
   width: max-content;
 }

@@ -7,7 +7,7 @@ export function GalleryCard({ preview, altText, images, handleImgClick }) {
       <img
         className="gallery-card-img"
         src={preview}
-        alt={altText.value}
+        alt={altText?.value}
         onClick={() => handleImgClick(images)}
       />
     </figure>

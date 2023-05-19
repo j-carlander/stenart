@@ -3,6 +3,7 @@
   justify-content: center;
   gap: 2em;
   position: sticky;
+  z-index: 10;
   top: 0;
   padding: 1em;
   background-color: #e09145;
