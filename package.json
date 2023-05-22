@@ -1,5 +1,6 @@
 {
   "name": "stenart",
+  "homepage": "https://j-carlander.github.io/stenart",
   "private": true,
   "version": "0.0.0",
   "type": "module",
