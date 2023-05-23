@@ -12,6 +12,7 @@
   width: min(560px, 95vw);
   height: 85vh;
   position: relative;
+  overflow: hidden;
 }
 
 .carousel-slide {
