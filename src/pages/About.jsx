@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchFromRoute } from "../services/fetchData";
 
 import "./stylesheets/Pages.css";
+import previewDB from "../config/__mocks__/previewDB";
 
 export function About() {
   const [about, setAbout] = useState({});
@@ -10,12 +11,20 @@ export function About() {
   useEffect(() => {
     let componentIsLoaded = true;
 
-    fetchFromRoute("about").then((result) => {
-      if (componentIsLoaded) {
-        setAbout(result.mainContent);
-        setProfilePic(result.relatedImage.value);
-      }
-    });
+    fetchFromRoute("about")
+      .then((result) => {
+        if (componentIsLoaded) {
+          setAbout(result.mainContent);
+          setProfilePic(result.relatedImage.value);
+        }
+      })
+      .catch((err) => {
+        if (componentIsLoaded) {
+          console.log(err);
+          setAbout(previewDB.about.mainContent);
+          setProfilePic(previewDB.about.relatedImage.value);
+        }
+      });
     return () => (componentIsLoaded = false);
   }, []);
   return (

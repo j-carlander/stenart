@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchFromRoute } from "../services/fetchData";
 import "./stylesheets/Pages.css";
+import previewDB from "../config/__mocks__/previewDB";
 
 export function Home() {
   const [presentation, setPresentation] = useState("");
@@ -9,12 +10,20 @@ export function Home() {
   useEffect(() => {
     let componentIsLoaded = true;
 
-    fetchFromRoute("home").then((data) => {
-      if (componentIsLoaded) {
-        setImageSrc(data.hero.image.value);
-        setPresentation(data.hero.presentation.value);
-      }
-    });
+    fetchFromRoute("home")
+      .then((data) => {
+        if (componentIsLoaded) {
+          setImageSrc(data.hero.image.value);
+          setPresentation(data.hero.presentation.value);
+        }
+      })
+      .catch((err) => {
+        if (componentIsLoaded) {
+          console.log(err);
+          setImageSrc(previewDB.home.hero.image.value);
+          setPresentation(previewDB.home.hero.presentation.value);
+        }
+      });
 
     return () => (componentIsLoaded = false);
   }, []);

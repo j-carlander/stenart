@@ -3,6 +3,7 @@ import { fetchFromRoute } from "../services/fetchData";
 import { GalleryCard } from "../Components/GalleryCard/GalleryCard";
 import "./stylesheets/Pages.css";
 import { DisplayCase } from "../Components/DisplayCase/DisplayCase";
+import previewDB from "../config/__mocks__/previewDB";
 
 export function Gallery() {
   const [gallery, setGallery] = useState([]);
@@ -13,17 +14,30 @@ export function Gallery() {
   useEffect(() => {
     let componentIsLoaded = true;
 
-    fetchFromRoute("gallery").then((result) => {
-      const skulpturer = {
-        title: "Skulpturer",
-        images: result.skulpturer,
-      };
-      const akvareller = {
-        title: "Akvareller",
-        images: result.akvareller,
-      };
-      if (componentIsLoaded) setGallery([skulpturer, akvareller]);
-    });
+    fetchFromRoute("gallery")
+      .then((result) => {
+        const skulpturer = {
+          title: "Skulpturer",
+          images: result.skulpturer,
+        };
+        const akvareller = {
+          title: "Akvareller",
+          images: result.akvareller,
+        };
+        if (componentIsLoaded) setGallery([skulpturer, akvareller]);
+      })
+      .catch((err) => {
+        console.log(err);
+        const skulpturer = {
+          title: "Skulpturer",
+          images: previewDB.gallery.skulpturer,
+        };
+        const akvareller = {
+          title: "Akvareller",
+          images: previewDB.gallery.akvareller,
+        };
+        if (componentIsLoaded) setGallery([skulpturer, akvareller]);
+      });
 
     return () => (componentIsLoaded = false);
   }, []);
