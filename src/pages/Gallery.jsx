@@ -38,7 +38,6 @@ export function Gallery() {
         };
         if (componentIsLoaded) setGallery([skulpturer, akvareller]);
       });
-
     return () => (componentIsLoaded = false);
   }, []);
 
