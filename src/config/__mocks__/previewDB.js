@@ -117,7 +117,7 @@ const about = {
     },
     short: {
       value:
-        "Efter över fyrtio år som formgivande guldsmed, är …m jag arbetar med. Stenskulpturer och Akvareller.",
+        "Efter över fyrtio år som formgivande guldsmed, är det nu helt nya tekniker som jag arbetar med. Stenskulpturer och Akvareller.",
     },
   },
   relatedImage: {
